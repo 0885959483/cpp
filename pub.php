@@ -9,9 +9,9 @@
   }
  function getMqttfromlineMsg($Topic,$lineMsg){
  
-    $pos = strpos($lineMsg, ":openram");
+    $pos = strpos($lineMsg, ":");
     if($pos){
-      $splitMsg = explode(":stop", $lineMsg);
+      $splitMsg = explode(":", $lineMsg);
       $topic = $splitMsg[0];
       $msg = $splitMsg[1];
       pubMqtt($topic,$msg);
@@ -39,7 +39,7 @@
    
     // curl_setopt($ch, CURLOPT_USERPWD, “{YOUR NETPIE.IO APP KEY}:{YOUR NETPIE.IO APP SECRET}”)
     curl_setopt($ch, CURLOPT_USERPWD, "BjwsEhVUWt50Sxy:TlUva5etzHhiOCPUSAA6w794a");
-     
+    
     $response = curl_exec($ch);
     
       curl_close($ch);
